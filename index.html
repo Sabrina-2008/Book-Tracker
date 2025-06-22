@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookTracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">BookTracker</div>
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-tab="library">
+                <i class="fas fa-book-open"></i> Library
+            </button>
+            <button class="nav-tab" data-tab="want-to-read">
+                <i class="fas fa-bookmark"></i> Want to Read
+            </button>
+            <button class="nav-tab" data-tab="search">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </div>
+        <div class="user-avatar">
+            <i class="fas fa-user"></i>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Search Section -->
+        <section class="search-section active" id="search-tab">
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search any book in the world..." id="book-search">
+                    <button class="search-button" id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-results" id="search-results">
+                    <div class="search-info">Search for books using the Google Books API</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Library Section -->
+        <section class="library-section" id="library-tab">
+            <h2 class="section-title">My Library</h2>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="reading">Currently Reading</button>
+                <button class="filter-btn" data-filter="finished">Finished</button>
+            </div>
+            <div class="books-grid" id="library-books">
+                <!-- Book cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Want to Read Section -->
+        <section class="want-to-read-section" id="want-to-read-tab">
+            <h2 class="section-title">Want to Read</h2>
+            <div class="books-grid" id="want-to-read-books">
+                <!-- Book cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Book Details Modal -->
+    <div class="modal" id="book-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
